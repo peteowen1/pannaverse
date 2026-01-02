@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"C:\\\\Users\\\\peteo\\\\OneDrive\\\\Documents\\\\pannaverse\\\\panna\" remote -v)",
+      "Bash(rm:*)",
+      "Bash(wc:*)",
+      "Bash(git -C \"C:\\\\Users\\\\peteo\\\\OneDrive\\\\Documents\\\\pannaverse\\\\panna\" status --short)",
+      "Bash(git -C:*)",
+      "Bash(git rm:*)",
+      "Bash(git init:*)",
+      "Bash(git submodule add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}

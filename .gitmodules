@@ -1,0 +1,6 @@
+[submodule "panna"]
+	path = panna
+	url = https://github.com/peteowen1/panna.git
+[submodule "pannadata"]
+	path = pannadata
+	url = https://github.com/peteowen1/pannadata.git
