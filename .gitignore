@@ -1,6 +1,18 @@
 # Claude Code (local settings)
 .claude/
+CLAUDE.md
 
 # OS
 .DS_Store
 Thumbs.db
+.Rproj.user
+
+# Claude Code temp files
+tmpclaude-*
+
+# Debug/temp files
+debug_*.R
+_ul
+
+# R project files (in submodules)
+*.Rproj
