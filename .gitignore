@@ -6,3 +6,6 @@ CLAUDE.md
 .DS_Store
 Thumbs.db
 .Rproj.user
+
+# Claude Code temp files
+tmpclaude-*
