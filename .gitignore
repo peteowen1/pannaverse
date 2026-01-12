@@ -9,3 +9,10 @@ Thumbs.db
 
 # Claude Code temp files
 tmpclaude-*
+
+# Debug/temp files
+debug_*.R
+_ul
+
+# R project files (in submodules)
+*.Rproj
