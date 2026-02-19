@@ -12,7 +12,7 @@ tmpclaude-*
 
 # Debug/temp files
 debug_*.R
-_ul
+_ul*
 
 # R project files (in submodules)
 *.Rproj
