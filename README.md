@@ -111,7 +111,7 @@ git submodule update --remote --merge
 |--------|---------|-------|-----------|
 | Opta | 15 leagues | 2013+ | 263 columns, SPADL + XGBoost xG, event-level data |
 | Understat | Big 5 + Russia | 2014+ | xGChain, xGBuildup |
-| FBref | Big 5 + cups | 2017+ | StatsBomb xG, comprehensive passing |
+| FBref | Big 5 + European + cups + international | 2017+ | StatsBomb xG, comprehensive passing |
 
 ## Documentation
 
