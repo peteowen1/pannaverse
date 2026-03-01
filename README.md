@@ -7,13 +7,13 @@ Monorepo for the panna football player rating ecosystem. Contains the R package 
 ```
 pannaverse/
 ├── panna/        # R package - RAPM+SPM player ratings
-└── pannadata/    # Data repository - cached FBref/Opta/Understat data
+└── pannadata/    # Data repository - cached Opta/Understat/FBref data
 ```
 
 | Repository | Description | Documentation |
 |------------|-------------|---------------|
 | [panna](panna/) | R package implementing RAPM, SPM, and Panna ratings | [README](panna/README.md) |
-| [pannadata](pannadata/) | Cached match data from FBref, Opta, and Understat | [README](pannadata/README.md) |
+| [pannadata](pannadata/) | Cached match data from Opta, Understat, and FBref | [README](pannadata/README.md) |
 
 ## Getting Started
 
@@ -45,9 +45,9 @@ devtools::install_github("peteowen1/panna")
 library(panna)
 
 # Download from GitHub releases
-pb_download_source("fbref")     # FBref data
+pb_download_source("opta")      # Opta data (primary, 15 leagues)
 pb_download_source("understat") # Understat data
-pb_download_source("opta")      # Opta data
+pb_download_source("fbref")     # FBref data
 ```
 
 ### Quick Example
@@ -55,12 +55,12 @@ pb_download_source("opta")      # Opta data
 ```r
 library(panna)
 
-# Load Premier League 2024-25 summary stats
-summary <- load_summary("ENG", "2024-2025")
+# Load Premier League 2024-25 Opta stats (263 columns per player)
+opta_stats <- load_opta_stats("EPL", "2024-2025")
 
 # Get aggregated player statistics
-players <- player_fbref_summary(
-  leagues = "ENG",
+players <- player_opta_summary(
+  leagues = "EPL",
   seasons = "2024-2025",
   min_minutes = 900
 )
@@ -75,6 +75,12 @@ Panna is a player rating system that measures individual player impact on team p
 3. **Panna Rating** - Combines RAPM with SPM as a Bayesian prior for stability
 
 Ratings are expressed as xG per 90 minutes above/below average, split into offensive and defensive components.
+
+### Advanced Capabilities
+
+- **EPV** (Expected Possession Value) - Action-level player valuation from Opta event data
+- **Estimated Skills** - Bayesian decay-weighted skill estimation with position-specific priors
+- **Match Predictions** - XGBoost Poisson/multinomial models for match outcome prediction
 
 ## Submodule Workflow
 
@@ -103,9 +109,9 @@ git submodule update --remote --merge
 
 | Source | Leagues | Years | Key Stats |
 |--------|---------|-------|-----------|
-| FBref | Big 5 + cups | 2017+ | StatsBomb xG, comprehensive passing |
-| Opta | Big 5 | 2010+ | 271 columns, progressive carries |
+| Opta | 15 leagues | 2013+ | 263 columns, SPADL + XGBoost xG, event-level data |
 | Understat | Big 5 + Russia | 2014+ | xGChain, xGBuildup |
+| FBref | Big 5 + European + cups + international | 2017+ | StatsBomb xG, comprehensive passing |
 
 ## Documentation
 
